@@ -2,6 +2,10 @@
 
 Sudoku game
 
+## Identity
+
+Maël Schiemsky
+
 ## Getting Started
 
 1. Make sure Flutter is installed
