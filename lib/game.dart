@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sudoku_starter/widget/gridViewWidget.dart';
 
 class Game extends StatefulWidget {
   const Game({Key? key, required this.title}) : super(key: key);
@@ -53,28 +54,15 @@ class _GameState extends State<Game> {
             width: boxSize*3,
             height: boxSize*3,
             child:
-              GridView.count(
-                crossAxisCount: 3,
-                children:
-                List.generate(9, (x) {
-                  return Container(
-                    width: boxSize,
-                    height: boxSize,
-                    decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent)),
-                    child:
-                      GridView.count(
-                        crossAxisCount: 3,
-                        children:
-                          List.generate(9, (x) {
-                            return Container(
-                              width: boxSize,
-                              height: boxSize,
-                              decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 0.3)),
-                            );
-                          }),
-                  ));
-                }),
-            ),
+              GridVieWidget(
+                size: boxSize,
+                child:
+                  GridVieWidget(
+                    color: Colors.black,
+                    size: boxSize,
+                    width: 0.3,
+                  ),
+              ),
           ),
       ),
     );
